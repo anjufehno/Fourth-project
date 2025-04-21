@@ -6,6 +6,14 @@ export default function Main() {
         bottomText: "Walk into Mordor",
         imageUrl: "http://i.imgflip.com/1bij.jpg"
     })
+    
+    function handleChange(event) {
+        const {value} = event.currentTarget
+        setMeme(prevMeme => ({
+            ...prevMeme,
+            topText: value
+        }))
+    }
 
     return (
         <main>
@@ -15,6 +23,7 @@ export default function Main() {
                         type="text"
                         placeholder="One does not simply"
                         name="topText"
+                        onChange={handleChange}
                     />
                 </label>
 
